@@ -8,20 +8,22 @@
 ## Установка JetBrains Rider
 На курсе мы будем работать с ASP.NET Core в IDE JetBrains **Rider**. \
 Скачайте его по следующей ссылке: https://www.jetbrains.com/ru-ru/rider/nextversion/
-![https://www.jetbrains.com/ru-ru/rider/nextversion/](https://user-images.githubusercontent.com/36400912/141110435-9fbe9541-91d6-4122-a58e-c72d2b318e47.png)
+[![rider](https://user-images.githubusercontent.com/36400912/141110435-9fbe9541-91d6-4122-a58e-c72d2b318e47.png)](https://www.jetbrains.com/ru-ru/rider/nextversion/)
 
 При большом желании вы можете вести разработку и в Visual Studio 2019 или 2022.
 
 # Задания
 ## Задание 1: Создание и запуск проекта
-Откройте Rider, нажмите на кнопку `New Solution`, затем создайте проект `ASP.NET Core Web Application` (версия SDK 6.0, тип проекта `Empty`)
+1. Откройте Rider, нажмите на кнопку `New Solution`, затем создайте проект `ASP.NET Core Web Application` (версия SDK 6.0, тип проекта `Empty`)
 
 ![image](https://user-images.githubusercontent.com/36400912/141202045-261116d4-bbef-4759-9aff-b05efbcac3e8.png)
+
+2. Запустите проект (в бразузере должна открыться странича с надписью `Hello World`)
 
 
 ## Задание 2: Публикация репозитория
 Создайте аккаунт на Github, если у вас еще его нет и опубликуйте ранее созданный в Rider проект в собственный репозиторий - придумайте для него любое имя; например, `HelloAspNetCore`. Вы можете опубликовать репозиторий через интерфейс коммандной строки git, либо прямо через Rider: \
-Добавление Github аккаунта в Rider: https://www.jetbrains.com/help/rider/GitHub.html
+Добавление Github аккаунта в Rider: https://www.jetbrains.com/help/rider/GitHub.html \
 Создание репозитория и публикация проекта через Rider: https://www.jetbrains.com/help/rider/Get_Started_with_Version_Control.html
 
 **Ссылку на получившийся репозиторий отправьте преподавателю в личку в WhatsApp.**
