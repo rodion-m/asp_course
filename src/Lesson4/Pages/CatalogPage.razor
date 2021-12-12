@@ -1,0 +1,14 @@
+﻿@page "/CatalogPage"
+@using Shop.Domain.Models
+<h3>CatalogPage</h3>
+
+@foreach (var product in _products)
+{
+    <div>Автор: @product.Name</div>
+    <div>Название: @product.Name</div>
+    <div>Цена: @product.Price</div>
+}
+
+@code {
+    IEnumerable<Product> _products = null!;
+}

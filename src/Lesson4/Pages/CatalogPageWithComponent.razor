@@ -1,0 +1,23 @@
+﻿@page "/CatalogWC"
+@using Shop.Domain.Models
+@using Shop.Domain.Data
+
+@inject ICatalog _catalog
+
+<h3>CatalogPage</h3>
+
+@foreach (var product in _products)
+{
+    <ProductItem Product="product" />
+}
+
+@code {
+    IEnumerable<Product> _products = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        _products = _catalog.GetAllProducts();
+    }
+
+}

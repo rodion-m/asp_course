@@ -1,0 +1,32 @@
+﻿@page "/Login"
+@using System.ComponentModel.DataAnnotations
+<h3>Авторизация</h3>
+
+<EditForm Model="_model" OnValidSubmit="ProcessValidForm">
+	<DataAnnotationsValidator/>
+	
+	Email: <InputText @bind-Value="_model.Email" /> 
+	Пароль: <InputText @bind-Value="_model.Password" /> 
+	
+	@* Красивее обарачивать в table *@
+	<br/> <input type="submit" value="Войти">
+	<ValidationSummary/>
+</EditForm>
+
+@code {
+	private LoginFormModel _model = new();
+
+	private class LoginFormModel
+	{
+		[Required]
+		public string Email { get; set; } = null!
+		
+		[Required, MinLength(6)]
+		public string Password { get; set; }
+	}
+
+	private void ProcessValidForm()
+	{
+		throw new NotImplementedException();
+	}
+}

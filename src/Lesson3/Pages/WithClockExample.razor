@@ -1,0 +1,20 @@
+﻿@page "/example"
+
+@using Shop.Domain.Providers
+
+@inject IClock Clock
+
+<PageTitle>Заголовок в браузере</PageTitle>
+<h1>Заголовок на странице</h1>
+<div>Сейчас: @time</div>
+
+@code {
+	TimeOnly time;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		var now = Clock.GetCurrentTime();
+		time = TimeOnly.FromDateTime(now);
+	}
+}

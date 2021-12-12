@@ -1,0 +1,22 @@
+﻿@page "/ProductInfo/{ProductId:int}"
+@using Shop.Domain.Data
+@using Shop.Domain.Models
+
+@inject ICatalog _catalog
+
+<h3>ProductInfoPage</h3>
+
+@* UI отображения карточки товара *@
+
+@code {
+	[Parameter]
+	public int ProductId { get; set; }
+	
+	public Product Product { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		await base.OnInitializedAsync();
+		Product = _catalog.GetProductById(ProductId);
+	}
+}

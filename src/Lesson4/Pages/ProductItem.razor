@@ -1,0 +1,9 @@
+﻿@using Shop.Domain.Models
+<div>Автор: @Product.Name</div>
+<div>Название: @Product.Name</div>
+<div>Цена: @Product.Price</div>
+
+@code {
+	[Parameter]
+	public Product Product { get; set; }
+}

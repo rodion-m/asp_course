@@ -1,0 +1,28 @@
+﻿@page "/Authors"
+@using Shop.Domain.Services
+
+<h3>Authors</h3>
+
+@inject CatalogService CatalogService
+@inject IToastService toastService
+
+<img src="https://static.turbosquid.com/Preview/2018/11/20__13_28_43/00copy.jpg464BC035-AE35-4673-AB2D-10A415354DB7Default.jpg" alt=""/>
+
+@foreach(var a in _authors) {
+	<div @onclick="() => ShowMessage(a)">Автор: @a</div>
+}
+
+@code {
+	List<string> _authors = new();
+
+	void ShowMessage(string s)
+	{
+		toastService.ShowSuccess($"Успех: {s}");
+	}
+	
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		_authors = CatalogService.GetAuthors();
+	}
+}

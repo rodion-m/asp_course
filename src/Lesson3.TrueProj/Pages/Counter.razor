@@ -1,0 +1,54 @@
+@page "/counter"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+
+@inject ProtectedLocalStorage _localStorage 
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button @onclick="IncrementCount">Click me</button>
+<p/>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+	public record Person(int Count);
+
+	Person _person = new (0);
+	private int currentCount = 0;
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		await base.OnAfterRenderAsync(firstRender);
+		if (firstRender)
+		{
+			var result = await _localStorage.GetAsync<Person>("person");
+			_person = result.Value;
+			currentCount = _person?.Count ?? 0;
+			StateHasChanged();
+		}
+	}
+
+	private async Task SavePerson()
+	{
+		await _localStorage.SetAsync("person", _person);
+	}
+
+	private async Task IncrementCount()
+	{
+		await StartPeriodicTimer();
+	}
+	
+	private async Task StartPeriodicTimer()
+	{
+		var periodicTimer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+		while (await periodicTimer.WaitForNextTickAsync())
+		{
+			currentCount++;
+			_person = new Person(currentCount);
+			await _localStorage.SetAsync("person", _person);
+		}
+	}
+}

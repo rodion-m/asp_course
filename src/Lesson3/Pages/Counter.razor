@@ -1,0 +1,49 @@
+@page "/counter"
+@using Shop.Domain.Providers
+
+@inject IClock Clock
+
+<PageTitle>Counter</PageTitle>
+
+<StackLayout>
+    <Label> Time: @Clock.GetCurrentTime() </Label>
+    <Label> Current count: @_state.currentCount </Label>
+    <Button OnClick="@IncrementCount">Click me</Button>
+</StackLayout>
+
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @_state.currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+	private  State _state = new();
+	record State
+	{
+		public int currentCount { get; set; }
+	}
+
+	private async Task IncrementCount()
+	{
+		_state.currentCount++;
+		//await StartPeriodicTimer();
+	}
+
+	private async Task StartPeriodicTimer()
+	{
+		var periodicTimer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+		while (await periodicTimer.WaitForNextTickAsync())
+		{
+			_state.currentCount++;
+			StateHasChanged();
+		}
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		await base.OnAfterRenderAsync(firstRender);
+	}
+
+}
