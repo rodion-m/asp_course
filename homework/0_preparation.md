@@ -2,7 +2,7 @@
 # Подготовка
 ## Установка .NET 6
 Для работы потребуется установить последнюю версию пакета .NET 6. \
-Ссылка на установщик для Windows: https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-6.0.100-windows-x64-installer \
+Ссылка на установщик для Windows: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.101-windows-x64-installer \
 Если у вас другая ОС, скачайте соответствующий SDK на этой странице: https://dotnet.microsoft.com/download/dotnet/6.0
 
 ## Установка JetBrains Rider
