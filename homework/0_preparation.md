@@ -1,12 +1,19 @@
-# Добро пожаловать на курс Разработка веб-приложений с использованием технологии ASP.NET Core!
+# Добро пожаловать на курс по ASP.NET Core!
 # Подготовка
-## Установка .NET 6
-Для работы потребуется установить последнюю версию пакета .NET 6.
-1. Скачайте и установите последний SDK для вашей ОС на этой странице: https://dotnet.microsoft.com/download/dotnet/6.0
-![image](https://user-images.githubusercontent.com/36400912/168286454-6cb139b0-4a28-4fc5-8f82-16d0f2e31a99.png)
+## Установка .NET 8
+Для работы потребуется установить последнюю версию пакета .NET 8.
 
-## Установка JetBrains Rider
-На курсе мы будем работать с ASP.NET Core в IDE JetBrains **Rider**. \
-2. Скачайте его по следующей ссылке и установите: https://www.jetbrains.com/ru-ru/rider/download/download-thanks.html
+Скачайте и установите последний SDK для вашей ОС на [этой](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) странице.
 
-При большом желании вы можете вести разработку и в Visual Studio 2022.
+## Установка IDE
+На курсе мы будем работать с ASP.NET Core в [Visual Studio 2022](https://visualstudio.microsoft.com/ru/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false) (версии 17.8 и выше) или в [VS Code](https://code.visualstudio.com/Download) (с плагином [C# dev kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)).
+
+Рекомендую использовать **англоязычные** версии программ.
+
+## Настройка IDE
+Убедитесь, что галочка напротив компонента "ASP.NET and web development" установлена (как на изображении ниже)
+![image](https://github.com/rodion-m/asp_course/assets/36400912/93944160-b717-4c28-94f7-08bc2f84d650)
+
+
+## JetBrains **Rider** (недоступно из РФ)
+Также можно использовать для разработки JetBrains Rider (лучшая IDE для .NET, **по моему субъективному мнению**, но из использовать сейчас трудно): https://www.jetbrains.com/ru-ru/rider/download/download-thanks.html
